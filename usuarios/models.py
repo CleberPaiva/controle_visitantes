@@ -65,6 +65,8 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = "email"
 
+    objects = UsuarioManager()
+
     class Meta:
         verbose_name = "Usuário"
         verbose_name_plural = "Usuários"
