@@ -3,7 +3,9 @@ from django.db import models
 class Porteiro(models.Model):
 
     usuario = models.OneToOneField(
-        verbose_name=
+        "usuarios.Usuario",
+        verbose_name="Usuário",
+        on_delete=models.PROTECT,
     )
 
     nome_completo = models.CharField(
@@ -26,3 +28,11 @@ class Porteiro(models.Model):
         auto_now=False,
         auto_now_add=False,
     )
+
+    class Meta:
+        verbose_name = "Porteiro"
+        verbose_name_plural = "Porteiros"
+        db_table = "porteiro"
+
+    def _str_(self):
+        return self.nome_completo
