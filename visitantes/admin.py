@@ -1,3 +1,7 @@
 from django.contrib import admin
+from visitantes.models import Visitante
 
-# Register your models here.
+class VisitanteLista(admin.ModelAdmin):
+    list_display = ('nome_completo', 'cpf')
+
+admin.site.register(Visitante, VisitanteLista)
