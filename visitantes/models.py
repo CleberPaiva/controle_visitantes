@@ -45,7 +45,7 @@ class Visitante(models.Model):
         verbose_name= "Horário de autorização",
         auto_now=False, 
         blank=True, 
-        null=False
+        null=True
         )
 
     morador_responsavel = models.CharField(
