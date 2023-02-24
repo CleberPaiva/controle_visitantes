@@ -82,6 +82,11 @@ class Visitante(models.Model):
         if self.horario_autorizacao:
             return self.horario_autorizacao
         return "Visitante aguardando autorização"
+    
+    def get_horario_saida(self):
+        if self.horario_saida:
+            return self.horario_saida
+        return "Em visita"
 
     def get_morador_responsavel(self):
         if self.morador_responsavel:
