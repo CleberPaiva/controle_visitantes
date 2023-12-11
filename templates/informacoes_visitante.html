@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label>Número da casa a ser visitada</label>
+                        <label>Nome da empresa a ser visitada</label>
                         <input type="text" class="form-control" value="{{ visitante.numero_casa }}" disabled>
                     </div>
 
@@ -130,7 +130,7 @@
                         {% csrf_token %}
     
                         <div class="form-group">
-                            <label for="id_morador_responsavel" class="col-form-label">Nome do morador responsável por autorizar a entrada do visitante:</label>
+                            <label for="id_morador_responsavel" class="col-form-label">Nome do responsável por autorizar a entrada do visitante:</label>
                             {% render_field form.morador_responsavel placeholder="" class="form-control" %}
                         </div>
                             

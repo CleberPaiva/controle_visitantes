@@ -31,8 +31,11 @@ class Visitante(models.Model):
         auto_now=False
         )
 
-    numero_casa = models.PositiveSmallIntegerField(
-        verbose_name="Número da casa visitada"
+    numero_casa = models.CharField(
+        verbose_name="Empresa visitada",
+        max_length=124, 
+        blank=True, 
+        null=True
         )
 
     placa_veiculo = models.CharField(
@@ -62,7 +65,7 @@ class Visitante(models.Model):
         )
 
     morador_responsavel = models.CharField(
-        verbose_name="Morador responsável pela autorização", 
+        verbose_name="Responsável pela autorização", 
         max_length=194, 
         blank=True
         )

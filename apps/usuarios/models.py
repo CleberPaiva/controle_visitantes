@@ -7,9 +7,10 @@ from django.contrib.auth.models import (
 
 class UsuarioManager(BaseUserManager):
 
-    def create_user(self, email, password=None):
+    def create_user(self, email, password=None, nome_empresa=None):
         usuario = self.model(
-            email=self.normalize_email(email)
+            email=self.normalize_email(email),
+            nome_empresa=nome_empresa  # Adicionando o campo nome_empresa
         )
 
         usuario.is_active = True
@@ -23,7 +24,7 @@ class UsuarioManager(BaseUserManager):
 
         return usuario
 
-    def create_superuser(self, email, password):
+    def create_superuser(self, email, password, nome_empresa=None):
         usuario = self.create_user(
             email=self.normalize_email(email),
             password=password,
@@ -46,6 +47,12 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
         verbose_name="E-mail do usuário",
         max_length=194,
         unique=True,
+    )
+
+    nome_empresa = models.CharField(
+    verbose_name="Nome da Empresa",
+    max_length=255,
+    blank=True,  # Pode ser deixado em branco
     )
 
     is_active = models.BooleanField(

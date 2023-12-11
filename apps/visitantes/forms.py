@@ -20,7 +20,7 @@ class VisitanteForm(forms.ModelForm):
                 "invalid": "Por favor, informe um formato válido. (dd/mm/aaaa)"
             },
             "numero_casa": {
-                "required": "O número da casa é obrigatório para o registro!"
+                "required": "O nome da empresa é obrigatório para o registro!"
             }          
         }
         
@@ -34,6 +34,6 @@ class AutorizarVisitanteForm(forms.ModelForm):
         ]
         error_messages = {
             "morador_responsavel": {
-                "required": "Por favor, informe o morador responsável pela autorização de entrada do visitante"
+                "required": "Por favor, informe o responsável pela autorização de entrada do visitante"
             }
         }
